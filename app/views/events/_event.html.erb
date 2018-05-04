@@ -1,0 +1,4 @@
+<h2><%= link_to event.name, event_path(event) %></h2>
+<p>Date: <%= event.date.strftime('%c') %><p>
+<p><%= event.description %></p>
+<p>Created by <%= link_to event.creator.name, user_path(event.creator) %></p>

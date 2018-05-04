@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+include SessionsHelper
+
   def index
   	@events = Event.all
   end
@@ -8,7 +10,14 @@ class EventsController < ApplicationController
   end
 
   def create
-  	User.find(session[:user_id]).events.build(event_params)
+  	@event = current_user.events.build(event_params)
+  	if @event.save
+  		flash[:success] = "Event created."
+  		redirect_to @event
+  	else
+  		flash[:error] = "Event not created"
+  		render 'new'
+  	end
   end
 
   def show
