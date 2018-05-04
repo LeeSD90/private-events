@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(:name => params[:user][:name])
   	@user.save
+    redirect_to events_path
   end
 
   def show
