@@ -11,5 +11,9 @@ end
 end
 
 50.times do |i|
-	Event.find(rand(1..4)).attendees << User.find(rand(1..50))
+	begin
+		Event.find(rand(1..4)).attendees << User.find(rand(1..50))
+	rescue => e
+		puts "Error #{e.message}"
+	end
 end
