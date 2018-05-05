@@ -2,7 +2,7 @@
 <h4>Event description: <%= @event.description %></h4>
 <h4>Event Attendees: </br>
 	<ul>
-	<%= @event.attendees.each do |a| %>
+	<% @event.attendees.each do |a| %>
 	<li><%= link_to a.name, a %></li>
 	<% end %>
 	</ul>

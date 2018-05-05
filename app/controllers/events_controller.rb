@@ -2,7 +2,8 @@ class EventsController < ApplicationController
 include SessionsHelper
 
   def index
-  	@events = Event.all
+  	@future = Event.future
+    @past = Event.past
   end
 
   def new
@@ -21,7 +22,7 @@ include SessionsHelper
   end
 
   def show
-  	@event = Event.find_by(params[:id])
+  	@event = Event.find(params[:id])
   end
 
     private

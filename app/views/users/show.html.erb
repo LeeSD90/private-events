@@ -3,4 +3,6 @@
 ----------------------------------------------------------------
 <h4> Events Created: <%= render @user.events %></h4>
 ----------------------------------------------------------------
-<h4> Events Attending: <%= render @user.attended_events %></h4>
+<h4> Events Attending: </h4>
+<h3>Upcoming - <%= render @upcoming_events if !@upcoming_events.nil? %> </h3>
+<h3>Previous - <%= render @previous_events if !@previous_events.nil? %> </h3>
