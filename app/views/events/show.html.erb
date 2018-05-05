@@ -1,1 +1,8 @@
 <h1>Event creator: <%= User.find(@event.creator_id).name %> </h1>
+<h2>Event Attendees: </br>
+	<ul>
+	<%= @event.attendees.each do |a| %>
+	<li><%= link_to a.name, a %></li>
+	<% end %>
+	</ul>
+</h2>
